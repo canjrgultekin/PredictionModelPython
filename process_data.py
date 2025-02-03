@@ -1,5 +1,7 @@
 import json
-import pandas as pd
+
+import pandas
+
 from fetch_data import fetch_data, PAST_PURCHASES_QUERY, PAST_CART_ADDS_QUERY
 
 def convert_to_json():
@@ -19,7 +21,7 @@ def convert_to_json():
                     "ProductCategory": row["ProductCategory"],
                     "ProductQuantity": row["ProductQuantity"],
                     "ProductPrice": row["ProductPrice"],
-                    "OrderDate": row["OrderDate"].isoformat() if pd.notna(row["OrderDate"]) else None
+                    "OrderDate": row["OrderDate"].isoformat() if pandas.notna(row["OrderDate"]) else None
                 }
             ]
         })
@@ -34,7 +36,7 @@ def convert_to_json():
                     "ProductCategory": row["ProductCategory"],
                     "ProductQuantity": row["ProductQuantity"],
                     "ProductPrice": row["ProductPrice"],
-                    "AddToCartDate": row["AddToCartDate"].isoformat() if pd.notna(row["AddToCartDate"]) else None
+                    "AddToCartDate": row["AddToCartDate"].isoformat() if pandas.notna(row["AddToCartDate"]) else None
                 }
             ]
         })

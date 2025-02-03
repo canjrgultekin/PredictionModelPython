@@ -1,6 +1,9 @@
-import pandas as pd
 import json
+
+import pandas as pd
+
 from fetch_data import fetch_data, PAST_PURCHASES_QUERY, PAST_CART_ADDS_QUERY
+
 
 def calculate_customer_scores():
     """Müşteri skorlarını hesaplar ve JSON olarak kaydeder"""
